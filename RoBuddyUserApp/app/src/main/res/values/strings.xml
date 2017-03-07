@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RoBuddyUserApp</string>
+    <string name="checked_out">Currently Checked Out Items</string>
+    <string name="item_search">Search the Database</string>
+    <string name="name_hint">Please Enter Your Name</string>
+    <string name="uteid_hint">Please Enter Your UT EID</string>
+    <string name="login_submission">Submit</string>
+    <string name="greeting">Hello</string>
+    <string name="search_hint">Search items</string>
+    <string name="search_menu">Search</string>
+    <string name="return_item">Return this item</string>
+    <string name="view_item">Details on this item</string>
+</resources>
