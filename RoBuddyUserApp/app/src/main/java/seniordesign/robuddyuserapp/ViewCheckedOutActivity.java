@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class ViewCheckedOutActivity extends AppCompatActivity {
 
     ListView yourCheckedOutItems;
-    static ArrayList<Item> yourList;
+    static ArrayList<String> yourItems = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,6 @@ public class ViewCheckedOutActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         //yourList = intent.getParcelableArrayListExtra("YOUR_LIST");
-        ArrayList<String> yourItems = new ArrayList<String>();
         yourItems.add("Screwdriver");
         ArrayAdapter<String> viewAdapter =
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, yourItems);
@@ -51,21 +50,20 @@ public class ViewCheckedOutActivity extends AppCompatActivity {
                 (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
 
         switch(item.getItemId()) {
-            case R.id.view_contact_yours:
+            case R.id.view_item_yours:
                 int index = info.position;
-                Item currentItem = yourList.get(index);
+                String viewItem = yourItems.get(index);
                 Intent intent = new Intent(this, ItemDetailActivity.class);
                 Bundle itemInfo = new Bundle();
-                itemInfo.putParcelable("ITEMDETAIL", currentItem);
+                itemInfo.putString("ITEMDETAIL", viewItem);
                 intent.putExtras(itemInfo);
                 startActivity(intent);
                 return true;
-            case R.id.delete_contact:
+            case R.id.item_return:
                 index = info.position;
-                intent = new Intent(this, UploadSearchActivity.class);
-                yourList.remove(index);
-                intent.putParcelableArrayListExtra("UPDATED_LOCAL_LIST", yourList);
-                UploadSearchActivity.added = true;
+                intent = new Intent(this, MainPageActivity.class);
+                yourItems.remove(index);
+                //intent.putParcelableArrayListExtra("UPDATED_LOCAL_LIST", yourList);
                 startActivity(intent);
                 return true;
             default:

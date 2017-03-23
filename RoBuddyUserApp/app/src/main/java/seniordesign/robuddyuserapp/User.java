@@ -10,15 +10,18 @@ import android.os.Parcelable;
 public class User implements Parcelable{
     private String name;
     private String uteid;
+    private String signature; //haven't quite tested yet, but supposed to be unique ID for user
 
     public User(String name, String uteid) {
         this.name = name;
         this.uteid = uteid;
+        this.signature = name + uteid + Math.random();
     }
 
     public User(Parcel input) {
         this.name = input.readString();
         this.uteid = input.readString();
+        this.signature = input.readString();
     }
 
     @Override
@@ -29,6 +32,7 @@ public class User implements Parcelable{
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
         dest.writeString(this.uteid);
+        dest.writeString(this.signature);
     }
 
     public static final Parcelable.Creator<User> CREATOR =
@@ -40,5 +44,5 @@ public class User implements Parcelable{
 
     public String getName() {return this.name;}
     public String getUTEID() {return this.uteid;}
-
+    public String getSignature() {return this.signature;}
 }

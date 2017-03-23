@@ -21,10 +21,10 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/temp"
+            app:srcCompat="@drawable/robuttavatar"
             android:id="@+id/imageView"
             android:layout_weight="2.5"
-            android:src="@drawable/temp" />
+            android:src="@drawable/robuttavatar" />
 
         <LinearLayout
             android:orientation="vertical"

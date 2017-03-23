@@ -10,14 +10,20 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
+
+
 public class MainPageActivity extends AppCompatActivity {
+
+    private static User currentUser = new User("EMPTYNAME", "EMPTYUTEID");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         Bundle userInfo = intent.getExtras();
-        User currentUser = userInfo.getParcelable("NEW_USER");
+        if(currentUser.getName().equals("EMPTYNAME") && currentUser.getUTEID().equals("EMPTYUTEID")) {
+            currentUser = userInfo.getParcelable("NEW_USER");
+        }
 
         setContentView(R.layout.activity_main_page);
 
