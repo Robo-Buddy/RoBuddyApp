@@ -10,4 +10,26 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="seniordesign.robuddyuserapp.SearchResultsActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <ListView
+            android:id="@+id/availableItemsList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/returnButton"
+            android:text="@string/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="returnMain"
+            android:layout_weight="9"/>
+
+    </LinearLayout>
+
 </RelativeLayout>

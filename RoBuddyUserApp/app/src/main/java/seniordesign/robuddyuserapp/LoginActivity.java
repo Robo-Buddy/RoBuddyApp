@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
         String nameString = name.getText().toString();
         String uteidString = uteid.getText().toString();
-        if(!nameString.equals("") || !uteidString.equals("")) {
+        if(!nameString.equals("") && !uteidString.equals("")) {
             User newUser = new User(nameString, uteidString);
             Intent loginCompleteIntent = new Intent(this, MainPageActivity.class);
             Bundle userInfo = new Bundle();

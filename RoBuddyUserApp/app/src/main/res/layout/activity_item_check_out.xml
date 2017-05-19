@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/sign_in"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_item_check_out"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="seniordesign.robuddyuserapp.ItemCheckOutActivity">
 
     <LinearLayout
 
@@ -21,60 +22,70 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/logo"
+            app:srcCompat="@drawable/checkout"
             android:id="@+id/imageView"
-            android:layout_weight="2.5"
-            android:src="@drawable/logo" />
+            android:layout_weight="2.8"
+            android:src="@drawable/checkout" />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="256dp">
+            android:layout_height="256dp"
+            android:weightSum="1">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/required_text"
+                android:id="@+id/table_select_prompt"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:textColorLink="@android:color/holo_blue_dark"
+                android:layout_weight="0.22"/>
+
+
+
+            <Spinner
+                android:id="@+id/table_selection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/table_numbers"
+                android:prompt="@string/table_number_hint"
                 android:layout_gravity="center_horizontal"
                 android:ems="10"
-                android:textColorLink="@android:color/holo_blue_dark"/>
+                android:layout_weight="0.22">
 
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName|textCapWords"
-                android:ems="10"
-                android:windowSoftInputMode="adjustPan"
-                android:id="@+id/name_edit"
-                android:hint="@string/name_hint"
-                android:gravity="center_horizontal"
-                android:textColorLink="@android:color/holo_blue_dark" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/uteid_edit"
-                android:hint="@string/uteid_hint"
-                android:gravity="center_horizontal"
-                android:textColorLink="@android:color/holo_blue_dark"
-                android:windowSoftInputMode="adjustPan"/>
+            </Spinner>
 
 
         </LinearLayout>
 
     </LinearLayout>
+
     <Button
-        android:text="@string/login_submission"
+        android:layout_marginTop="10dp"
+        android:text="@string/cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/submit_button"
-        android:onClick="submit"
+        android:id="@+id/cancel_button"
+        android:onClick="Cancel"
         android:gravity="center_vertical|center_horizontal"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
         android:textColor="@android:color/white" />
+
+    <Button
+        android:text="@string/checkout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkout_button"
+        android:onClick="CheckOut"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_above="@id/cancel_button"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        />
+
+
 
 </RelativeLayout>

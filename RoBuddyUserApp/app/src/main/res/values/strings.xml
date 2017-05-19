@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RoBuddyUserApp</string>
+    <string name="app_name">RoBuddy</string>
     <string name="checked_out">Currently Checked Out Items</string>
     <string name="item_search">Search the Database</string>
     <string name="name_hint">Please Enter Your Name</string>
@@ -10,4 +10,21 @@
     <string name="search_menu">Search</string>
     <string name="return_item">Return this item</string>
     <string name="view_item">Details on this item</string>
+    <string name="check_in">Check In Item</string>
+    <string name="check_out">Check Out Item</string>
+    <string name="table_number_hint">Please Input Your Table Number</string>
+    <string name="checkout_button">Check Out and Queue Delivery?</string>
+    <string name="cancel">Cancel and Return to Main Menu</string>
+    <string name="return_home">Return to Main Menu</string>
+
+
+    <string-array name="table_numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+
+    </string-array>
 </resources>
